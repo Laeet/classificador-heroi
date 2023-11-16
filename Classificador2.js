@@ -1,40 +1,31 @@
 
-console.log("Bem Vindo.")
-let vitorias = 100
+function classificadorNivel(vitorias,derrotas){
+    const saldoVitorias = vitorias - derrotas
+    let nivel = ""
+    if (vitorias < 10){
+    nivel = "Ferro";
+    }
+    else if (vitorias >10 && vitorias<=20){
+     nivel= "Bronze";
+    }
+    else if (vitorias >20 && vitorias<=50){
+     nivel= "Prata";
+    }
+    else if (vitorias >50 && vitorias<=80){
+     nivel= "Ouro";
+    }
+    else if (vitorias >80 || vitorias<=90){
+     nivel= "Diamante";
+    }
+    else if (vitorias >90 || vitorias<=100){
+     nivel= "Lendário";
+    }
+    else if (vitorias >=101)    {
+     nivel= "Imortal";
+    }
 
-function Classificador(vitorias){
-    let classificacao = []
-if (vitorias < 10) 
-{
- return classificacao = "Ferro";
-}
-else if (vitorias >10 && vitorias<=20)
-{
-    return classificacao= "Bronze";
-}
-else if (vitorias >20 && vitorias<=50)
-{
-    return classificacao= "Prata";
-}
-else if (vitorias >50 && vitorias<=80)
-{
-    return classificacao= "Ouro";
-}
-else if (vitorias >80 || vitorias<=90)
-{
-    return classificacao= "Diamante";
-}
-else if (vitorias >90 || vitorias<=100)
-{
-    return classificacao= "Lendário";
-}
-else if (vitorias >=101)
-{
-    return classificacao= "Imortal";
-}
+    console.log('O herói tem saldo de ${saldoVitorias} e está no nível de ${classificacao}');
+    return {saldoVitorias, nivel}
+    }
 
-function resultado(vitorias) {
-}
-
-
-}
+const resultado = classificadorNivel (25,5);
